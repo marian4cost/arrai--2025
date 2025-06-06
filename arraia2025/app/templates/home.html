@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rei e Rainha RJ-45</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            background: linear-gradient(45deg, #f5e5c0, #f8c471);
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+        body .container{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-around;
+            flex-direction: row;
+        }
+        body .container .left{
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        body .container .left form{
+            width: 100%;
+            height: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        body .container .left form .form{
+            width: 50%;
+            height: 5%;
+            margin-left: 20%;
+            margin-bottom: 5%;
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            align-items: center;
+        }
+        body .container .left form .form label{
+            margin-right: 5%;
+        }
+        body .container .rigth{
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">
+        <h1>Eleição Rei e Rainha RJ-45</h1>
+    </div>
+    <div class="container">
+        <div class="left">
+            <form>
+                <div class="form">
+                    <label for="">Matrícula</label>
+                    <input type="text" placeholder="Digite aqui sua matrícula">
+                </div>
+                <div class="form">
+                    <label for="">CPF</label>
+                    <input type="text" placeholder="Digite aqui seu CPF">
+                </div>
+            </form>
+        </div>
+        <div class="rigth">
+            <div class="stopwatch">
+                <h1 class="timer" id="timer"></h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT AQUI -->
+     <script>
+        // time = dia * horas * minutos * segundos * 1000
+        const time = 1 * 60 * 60 * 1000 //1 hora no contador
+        const end = Date.now() + time
+
+        const timerElement = document.getElementById("timer")
+
+        function timeAtualization(){
+            const now = Date.now()
+            const timeRemainder = end - now
+
+            if(timeRemainder <= 0){
+                clearInterval(interval)
+                timerElement.textContent = "Tempo de Votação Encerrado"
+                return
+            }
+
+            const totalSeconds = Math.floor(timeRemainder / 1000)
+            const seconds = Math.floor(totalSeconds % 60)
+            const minutes = Math.floor((totalSeconds % (60 * 60)) / 60)
+            const hours = Math.floor((totalSeconds % (60 * 60 * 24)) / (60 * 60))
+            const days = Math.floor(totalSeconds / (60 * 60 * 24))
+
+            timerElement.textContent = `${days}, ${hours}, ${minutes}, ${seconds}`
+        }
+
+        timeAtualization()
+
+        const interval = setInterval(timeAtualization, 1000)
+    </script>
+</body>
+</html>
