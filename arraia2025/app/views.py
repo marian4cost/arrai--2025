@@ -8,3 +8,6 @@ def vote_king(request):
 
 def vote_queen(request):
     return render(request, "vote_queen.html")
+
+def candidates(request):
+    return render(request, "candidates.html")

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidatos Rei e Rainha</title>
+
+    <style>
+        *{
+            color: #4a3f36;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            background: linear-gradient(45deg, #f5e5c0, #f8c471);
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+        body .title{
+            margin-top: 5%;
+            margin-bottom: 5%;
+            font-size: 25px;
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+        body .container{
+            width: 70%;
+            height: 50%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        body .container .candidates_king h3, body .container .candidates_queen h3{
+            font-size: 20px;
+        }
+        body .container .candidates_king ul li, body .container .candidates_queen ul li{
+            list-style: none;
+            font-size: 20px;
+        }
+        body .button button{
+            background: linear-gradient(45deg, #e9d8b2, #f8c471);
+            width: 250px;
+            height: 35px;
+            border-radius: 20px;
+            border: 1px solid #4a3f36;
+            outline: none;
+            transition: 0.5s;
+        }
+        body .button button:hover{
+            transition: 0.5s;
+            width: 270px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">
+        <h1>CANDIDATOS REI E RAINHA RJ-45</h1>
+    </div>
+    <div class="container">
+        <div class="candidates_king">
+            <h3>CONHEÇA OS CANDIDATOS A REI RJ-45</h3>
+            <ul>
+                <li>name01</li>
+                <li>name02</li>
+                <li>name03</li>
+            </ul>
+        </div>
+        <div class="candidates_queen">
+            <h3>CONHEÇA AS CANDIDATAS A RAINHA RJ-45</h3>
+            <ul>
+                <li>name01</li>
+                <li>name02</li>
+                <li>name03</li>
+            </ul>
+        </div>
+    </div>
+    <div class="button">
+        <button>Ir Votar</button>
+    </div>
+</body>
+</html>
