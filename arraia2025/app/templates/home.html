@@ -6,13 +6,13 @@
   <title>Rei e Rainha RJ-45</title>
 
   <style>
-    * {
+    *{
       color: #4a3f36;
       margin: 0;
       padding: 0;
       font-family: Arial, Helvetica, sans-serif;
     }
-    body {
+    body{
       background: linear-gradient(45deg, #f5e5c0, #f8c471);
       width: 100%;
       height: 100vh;
@@ -21,18 +21,18 @@
       flex-direction: column;
       align-items: center;
     }
-    body .title {
+    body .title{
       margin-top: 5%;
       font-size: 25px;
     }
-    body .container {
+    body .container{
       width: 100%;
       height: 100%;
       display: flex;
       justify-content: space-around;
       flex-direction: row;
     }
-    body .container .left {
+    body .container .left{
       width: 50%;
       height: 100%;
       display: flex;
@@ -40,7 +40,7 @@
       justify-content: center;
       align-items: center;
     }
-    body .container .left form {
+    body .container .left form{
       width: 100%;
       height: 50%;
       display: flex;
@@ -48,7 +48,7 @@
       justify-content: center;
       align-items: center;
     }
-    body .container .left form button {
+    body .container .left form button{
       background: linear-gradient(45deg, #e9d8b2, #f8c471);
       width: 250px;
       height: 35px;
@@ -57,12 +57,12 @@
       outline: none;
       transition: 0.5s;
     }
-    body .container .left form button:hover {
+    body .container .left form button:hover{
       transition: 0.5s;
       width: 270px;
       height: 40px;
     }
-    body .container .left form .form {
+    body .container .left form .form{
       width: 50%;
       height: 5%;
       margin-bottom: 5%;
@@ -71,18 +71,18 @@
       justify-content: center;
       align-items: center;
     }
-    body .container .left form .form label {
+    body .container .left form .form label{
       margin-right: 5%;
       font-size: 20px;
     }
-    body .container .left form .form input {
+    body .container .left form .form input{
       width: 250px;
       height: 25px;
       border-radius: 5px;
       border: 1px solid #000;
       outline: none;
     }
-    body .container .rigth {
+    body .container .rigth{
       width: 50%;
       height: 100%;
       display: flex;
@@ -98,24 +98,24 @@
         justify-content: center;
         align-items: center;
     }
-    body .container .rigth .stopwatch h1.timer {
+    body .container .rigth .stopwatch h1.timer{
       display: flex;
       gap: 15px;
       font-size: 100px;
     }
-    body .container .rigth .stopwatch h1.timer span {
+    body .container .rigth .stopwatch h1.timer span{
       display: inline-block;
     }
 
-    @media (max-width: 1000px) {
-      body {
+    @media (max-width: 1000px){
+      body{
         width: 100%;
         height: 100%;
       }
-      body .title {
+      body .title{
         font-size: 20px;
       }
-      body .container {
+      body .container{
         width: 100%;
         height: 100%;
         display: flex;
@@ -123,53 +123,53 @@
         align-items: center;
         flex-direction: column;
       }
-      body .container .left {
+      body .container .left{
         margin-top: 10%;
         margin-bottom: 10%;
       }
-      body .container .left form .form label {
+      body .container .left form .form label{
         font-size: 15px;
       }
-      body .container .rigth {
+      body .container .rigth{
         margin-bottom: 10%;
       }
-      body .container .rigth .stopwatch h1 {
+      body .container .rigth .stopwatch h1{
         font-size: 25px;
       } 
     }
 
     @media (max-width: 900px){
-        body .title {
+        body .title{
             font-size: 20px;
         }
-        body .container .left form .form label {
+        body .container .left form .form label{
             font-size: 15px;
         }
-        body .container .left {
+        body .container .left{
             margin-top: 5%;
             margin-bottom: 5%;
         }
-        body .container .rigth .stopwatch h1 {
+        body .container .rigth .stopwatch h1{
             font-size: 20px;
         } 
     }
 
     @media (max-width: 780px){
-        body .title {
+        body .title{
             font-size: 20px;
         }
-        body .container .left form .form label {
+        body .container .left form .form label{
             font-size: 15px;
         }
-        body .container .left {
+        body .container .left{
             margin-top: 5%;
             margin-bottom: 5%;
         }
-        body .container .rigth .stopwatch .timer {
+        body .container .rigth .stopwatch .timer{
             flex-direction: column;
             align-items: center;
         }
-        body .container .rigth .stopwatch h1 {
+        body .container .rigth .stopwatch h1{
             font-size: 20px;
         }
     }
@@ -180,7 +180,6 @@
             text-align: center;
         }
     }
-    
   </style>
 </head>
 <body>
@@ -216,40 +215,40 @@
 
   <!-- JAVASCRIPT -->
   <script>
-    const end = localStorage.getItem("endTime") || (Date.now() + 3 * 24 * 60 * 60 * 1000);
-    localStorage.setItem("endTime", end);
+    const end = localStorage.getItem("endTime") || (Date.now() + 3 * 24 * 60 * 60 * 1000) // dias * horas * minutos * segundos * 1000
+    localStorage.setItem("endTime", end)
 
-    const daysEl = document.getElementById("days");
-    const hoursEl = document.getElementById("hours");
-    const minutesEl = document.getElementById("minutes");
-    const secondsEl = document.getElementById("seconds");
-    const timerContainer = document.getElementById("timer");
+    const daysEl = document.getElementById("days")
+    const hoursEl = document.getElementById("hours")
+    const minutesEl = document.getElementById("minutes")
+    const secondsEl = document.getElementById("seconds")
+    const timerContainer = document.getElementById("timer")
 
-    function updateTimer() {
-      const now = Date.now();
-      const timeLeft = end - now;
+    function updateTimer(){
+      const now = Date.now()
+      const timeLeft = end - now
 
-      if (timeLeft <= 0) {
-        clearInterval(interval);
-        timerContainer.textContent = "Tempo de Votação Encerrado";
-        localStorage.removeItem("endTime");
-        return;
+      if (timeLeft <= 0){
+        clearInterval(interval)
+        timerContainer.textContent = "Tempo de Votação Encerrado"
+        localStorage.removeItem("endTime")
+        return
       }
 
-      const totalSeconds = Math.floor(timeLeft / 1000);
-      const days = Math.floor(totalSeconds / (60 * 60 * 24));
-      const hours = Math.floor((totalSeconds % (60 * 60 * 24)) / (60 * 60));
-      const minutes = Math.floor((totalSeconds % (60 * 60)) / 60);
-      const seconds = totalSeconds % 60;
+      const totalSeconds = Math.floor(timeLeft / 1000)
+      const days = Math.floor(totalSeconds / (60 * 60 * 24))
+      const hours = Math.floor((totalSeconds % (60 * 60 * 24)) / (60 * 60))
+      const minutes = Math.floor((totalSeconds % (60 * 60)) / 60)
+      const seconds = totalSeconds % 60
 
-      daysEl.textContent = `${days}`;
-      hoursEl.textContent = `${hours}`;
-      minutesEl.textContent = `${minutes}`;
-      secondsEl.textContent = `${seconds}`;
+      daysEl.textContent = `${days}`
+      hoursEl.textContent = `${hours}`
+      minutesEl.textContent = `${minutes}`
+      secondsEl.textContent = `${seconds}`
     }
 
-    updateTimer();
-    const interval = setInterval(updateTimer, 1000);
+    updateTimer()
+    const interval = setInterval(updateTimer, 1000)
   </script>
 </body>
 </html>
