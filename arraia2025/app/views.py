@@ -3,8 +3,8 @@ from django.shortcuts import render
 def home(request):
     return render(request, "home.html")
 
-def candidate01(request):
-    return render(request, "candidate01.html")
+def vote_king(request):
+    return render(request, "vote_king.html")
 
-def candidate02(request):
-    return render(request, "candidate02.html")
+def vote_queen(request):
+    return render(request, "vote_queen.html")
