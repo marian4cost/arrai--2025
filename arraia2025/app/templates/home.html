@@ -1,124 +1,255 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rei e Rainha RJ-45</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rei e Rainha RJ-45</title>
 
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-            font-family: Arial, Helvetica, sans-serif;
+  <style>
+    * {
+      color: #4a3f36;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    body {
+      background: linear-gradient(45deg, #f5e5c0, #f8c471);
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+    body .title {
+      margin-top: 5%;
+      font-size: 25px;
+    }
+    body .container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-around;
+      flex-direction: row;
+    }
+    body .container .left {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    body .container .left form {
+      width: 100%;
+      height: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    body .container .left form button {
+      background: linear-gradient(45deg, #e9d8b2, #f8c471);
+      width: 250px;
+      height: 35px;
+      border-radius: 20px;
+      border: 1px solid #4a3f36;
+      outline: none;
+      transition: 0.5s;
+    }
+    body .container .left form button:hover {
+      transition: 0.5s;
+      width: 270px;
+      height: 40px;
+    }
+    body .container .left form .form {
+      width: 50%;
+      height: 5%;
+      margin-bottom: 5%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+    body .container .left form .form label {
+      margin-right: 5%;
+      font-size: 20px;
+    }
+    body .container .left form .form input {
+      width: 250px;
+      height: 25px;
+      border-radius: 5px;
+      border: 1px solid #000;
+      outline: none;
+    }
+    body .container .rigth {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+    body .container .rigth .stopwatch{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    body .container .rigth .stopwatch h1.timer {
+      display: flex;
+      gap: 15px;
+      font-size: 100px;
+    }
+    body .container .rigth .stopwatch h1.timer span {
+      display: inline-block;
+    }
+
+    @media (max-width: 1000px) {
+      body {
+        width: 100%;
+        height: 100%;
+      }
+      body .title {
+        font-size: 20px;
+      }
+      body .container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      body .container .left {
+        margin-top: 10%;
+        margin-bottom: 10%;
+      }
+      body .container .left form .form label {
+        font-size: 15px;
+      }
+      body .container .rigth {
+        margin-bottom: 10%;
+      }
+      body .container .rigth .stopwatch h1 {
+        font-size: 25px;
+      } 
+    }
+
+    @media (max-width: 900px){
+        body .title {
+            font-size: 20px;
         }
-        body{
-            background: linear-gradient(45deg, #f5e5c0, #f8c471);
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            align-items: center;
+        body .container .left form .form label {
+            font-size: 15px;
         }
-        body .container{
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: space-around;
-            flex-direction: row;
-        }
-        body .container .left{
-            width: 50%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        body .container .left form{
-            width: 100%;
-            height: 50%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        body .container .left form .form{
-            width: 50%;
-            height: 5%;
-            margin-left: 20%;
+        body .container .left {
+            margin-top: 5%;
             margin-bottom: 5%;
-            display: flex;
-            flex-direction: row;
-            justify-content: left;
+        }
+        body .container .rigth .stopwatch h1 {
+            font-size: 20px;
+        } 
+    }
+
+    @media (max-width: 780px){
+        body .title {
+            font-size: 20px;
+        }
+        body .container .left form .form label {
+            font-size: 15px;
+        }
+        body .container .left {
+            margin-top: 5%;
+            margin-bottom: 5%;
+        }
+        body .container .rigth .stopwatch .timer {
+            flex-direction: column;
             align-items: center;
         }
-        body .container .left form .form label{
-            margin-right: 5%;
+        body .container .rigth .stopwatch h1 {
+            font-size: 20px;
         }
-        body .container .rigth{
-            width: 50%;
-            height: 100%;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
+    }
+
+    @media (max-width: 680px){
+        body .title{
+            width: 60%;
+            text-align: center;
         }
-    </style>
+    }
+    
+  </style>
 </head>
 <body>
-    <div class="title">
-        <h1>Eleição Rei e Rainha RJ-45</h1>
-    </div>
-    <div class="container">
-        <div class="left">
-            <form>
-                <div class="form">
-                    <label for="">Matrícula</label>
-                    <input type="text" placeholder="Digite aqui sua matrícula">
-                </div>
-                <div class="form">
-                    <label for="">CPF</label>
-                    <input type="text" placeholder="Digite aqui seu CPF">
-                </div>
-            </form>
+  <div class="title">
+    <h1>ELEIÇÃO REI E RAINHA RJ-45</h1>
+  </div>
+  <div class="container">
+    <div class="left">
+      <form>
+        <div class="form">
+          <label for="">Matrícula</label>
+          <input type="text" placeholder="  Digite aqui sua matrícula">
         </div>
-        <div class="rigth">
-            <div class="stopwatch">
-                <h1 class="timer" id="timer"></h1>
-            </div>
+        <div class="form">
+          <label for="">CPF</label>
+          <input type="text" placeholder="  Digite aqui seu CPF">
         </div>
+        <button>Entrar</button>
+      </form>
     </div>
+    <div class="rigth">
+      <div class="stopwatch">
+        <h1>Tempo Restante para Votação</h1>
+        <h1 class="timer" id="timer">
+          <span id="days">0</span>
+          <span id="hours">0</span>
+          <span id="minutes">0</span>
+          <span id="seconds">0</span>
+        </h1>
+      </div>
+    </div>
+  </div>
 
-    <!-- JAVASCRIPT AQUI -->
-     <script>
-        // time = dia * horas * minutos * segundos * 1000
-        const time = 1 * 60 * 60 * 1000 //1 hora no contador
-        const end = Date.now() + time
+  <!-- JAVASCRIPT -->
+  <script>
+    const end = localStorage.getItem("endTime") || (Date.now() + 3 * 24 * 60 * 60 * 1000);
+    localStorage.setItem("endTime", end);
 
-        const timerElement = document.getElementById("timer")
+    const daysEl = document.getElementById("days");
+    const hoursEl = document.getElementById("hours");
+    const minutesEl = document.getElementById("minutes");
+    const secondsEl = document.getElementById("seconds");
+    const timerContainer = document.getElementById("timer");
 
-        function timeAtualization(){
-            const now = Date.now()
-            const timeRemainder = end - now
+    function updateTimer() {
+      const now = Date.now();
+      const timeLeft = end - now;
 
-            if(timeRemainder <= 0){
-                clearInterval(interval)
-                timerElement.textContent = "Tempo de Votação Encerrado"
-                return
-            }
+      if (timeLeft <= 0) {
+        clearInterval(interval);
+        timerContainer.textContent = "Tempo de Votação Encerrado";
+        localStorage.removeItem("endTime");
+        return;
+      }
 
-            const totalSeconds = Math.floor(timeRemainder / 1000)
-            const seconds = Math.floor(totalSeconds % 60)
-            const minutes = Math.floor((totalSeconds % (60 * 60)) / 60)
-            const hours = Math.floor((totalSeconds % (60 * 60 * 24)) / (60 * 60))
-            const days = Math.floor(totalSeconds / (60 * 60 * 24))
+      const totalSeconds = Math.floor(timeLeft / 1000);
+      const days = Math.floor(totalSeconds / (60 * 60 * 24));
+      const hours = Math.floor((totalSeconds % (60 * 60 * 24)) / (60 * 60));
+      const minutes = Math.floor((totalSeconds % (60 * 60)) / 60);
+      const seconds = totalSeconds % 60;
 
-            timerElement.textContent = `${days}, ${hours}, ${minutes}, ${seconds}`
-        }
+      daysEl.textContent = `${days}`;
+      hoursEl.textContent = `${hours}`;
+      minutesEl.textContent = `${minutes}`;
+      secondsEl.textContent = `${seconds}`;
+    }
 
-        timeAtualization()
-
-        const interval = setInterval(timeAtualization, 1000)
-    </script>
+    updateTimer();
+    const interval = setInterval(updateTimer, 1000);
+  </script>
 </body>
 </html>
