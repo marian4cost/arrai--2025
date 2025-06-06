@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votação Rainha RJ-45</title>
+
+    <style>
+        *{
+            color: #4a3f36;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            background: linear-gradient(45deg, #f5e5c0, #f8c471);
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        body .title{
+            font-size: 25px;
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+        body .container{
+            width: 100%;
+            height: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        body .container form{
+            width: 70%;
+            height: 70%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        body .container form label{
+            font-size: 20px;
+            width: 70%;
+        }
+        body .container form input{
+            width: 150px;
+            height: 45px;
+            margin-top: 20px;
+            border-radius: 5px;
+            border: 1px solid #000;
+            outline: none;
+        }
+        body .container .button{
+            width: 40%;
+            height: 40%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        body .container .button button{
+            background: linear-gradient(45deg, #e9d8b2, #f8c471);
+            width: 150px;
+            height: 35px;
+            border-radius: 20px;
+            border: 1px solid #4a3f36;
+            outline: none;
+            transition: 0.5s;
+        }
+        body .container .button button:hover{
+            transition: 0.5s;
+            width: 170px;
+            height: 40px;
+        }
+        @media (max-width: 650px){
+            body .container form input{
+                height: 60px;
+                margin-bottom: 15px;
+            }
+        }
+        @media (max-width: 500px){
+            body .title{
+                font-size: 20px;
+            }
+            body .container form input{
+                height: 75px;
+                margin-bottom: 15px;
+            }
+        }
+        @media (max-width: 350px){
+            body .title{
+                font-size: 15px;
+            }
+            body .container form input{
+                height: 120px;
+            }
+        }
+        @media (max-width: 300px){
+            body .container form input{
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="title">
+        <h1>ELEIÇÃO REI E RAINHA RJ-45</h1>
+        <h2>VOTE EM SUA CANDIDATA</h2>
+    </div>
+    <div class="container">
+        <form action="">
+            <label for="">Digite o Número da sua Candidata</label>
+            <input type="text">
+            <div class="button">
+                <button>Enviar</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -5,3 +5,6 @@ def home(request):
 
 def candidate01(request):
     return render(request, "candidate01.html")
+
+def candidate02(request):
+    return render(request, "candidate02.html")
