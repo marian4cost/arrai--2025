@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            color: #4a3f36;
+        }
+        nav{
+            background: transparent;
+            border-bottom: 1px solid #4a3f36;
+            padding: 1rem 2rem;
+            width: 100%;
+        }
+        
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo a {
+            color: #4a3f36;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .menu li {
+            margin-left: 2rem;
+        }
+        
+        .menu li a {
+            color: #4a3f36;
+            text-decoration: none;
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #4a3f36;
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            
+            .menu {
+                position: absolute;
+                right: 0;
+                top: 70px;
+                background-color: #f8c471;
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                padding: 1rem 0;
+                clip-path: circle(0px at 90% -10%);
+                -webkit-clip-path: circle(0px at 90% -10%);
+                transition: all 0.5s ease-out;
+                pointer-events: none;
+            }
+            
+            .menu.active {
+                clip-path: circle(1000px at 90% -10%);
+                -webkit-clip-path: circle(1000px at 90% -10%);
+                pointer-events: all;
+            }
+            
+            .menu li {
+                margin: 1rem 0;
+                opacity: 0;
+            }
+            
+            .menu.active li {
+                opacity: 1;
+            }
+            
+            .hamburger.active div:nth-child(1) {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+            
+            .hamburger.active div:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .hamburger.active div:nth-child(3) {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="navbar-container">
+            <div class="logo">
+                <a href="#">Logo</a>
+            </div>
+            
+            <ul class="menu">
+                <li><a href="#">Usuário em Votação</a></li>
+                <li><a href="#">Ver Candidatos</a></li>
+                <li><a href="#">Votar</a></li>
+            </ul>
+            
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const menu = document.querySelector('.menu');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            menu.classList.toggle('active');
+            
+            if (menu.classList.contains('active')) {
+                const menuItems = document.querySelectorAll('.menu li');
+                menuItems.forEach((item, index) => {
+                    item.style.transition = `opacity 0.5s ease ${index * 0.1}s`;
+                });
+            }
+        });
+    </script>
+</body>
+</html>

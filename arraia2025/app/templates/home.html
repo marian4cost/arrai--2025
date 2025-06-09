@@ -102,9 +102,13 @@
       display: flex;
       gap: 15px;
       font-size: 100px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
     }
     body .container .rigth .stopwatch h1.timer span{
       display: inline-block;
+      margin-right: 5%;
     }
 
     @media (max-width: 1000px){
@@ -183,6 +187,7 @@
   </style>
 </head>
 <body>
+  {% include 'navbar.html' %}
   <div class="title">
     <h1>ELEIÇÃO REI E RAINHA RJ-45</h1>
   </div>
@@ -204,16 +209,15 @@
       <div class="stopwatch">
         <h1>Tempo Restante para Votação</h1>
         <h1 class="timer" id="timer">
-          <span id="days">0</span>
-          <span id="hours">0</span>
-          <span id="minutes">0</span>
-          <span id="seconds">0</span>
+          <span id="days">0 </span>
+          <span id="hours">0 </span>
+          <span id="minutes">0 </span>
+          <span id="seconds">0 </span>
         </h1>
       </div>
     </div>
   </div>
 
-  <!-- JAVASCRIPT -->
   <script>
     const end = localStorage.getItem("endTime") || (Date.now() + 3 * 24 * 60 * 60 * 1000) // dias * horas * minutos * segundos * 1000
     localStorage.setItem("endTime", end)
